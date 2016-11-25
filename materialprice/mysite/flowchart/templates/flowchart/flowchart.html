@@ -1,0 +1,29 @@
+{% extends 'flowchart/base.html' %}
+
+
+{% block content %}
+
+<a href="."> (回到目錄)</a>
+<table>
+<tr>
+  <!-- <th>id</th> -->
+  <th>品名</th>
+  <th>模號</th>
+  <th>客戶名稱</th>
+<tr>
+  <!-- <td>{{ item.id}}</td> -->
+<td>{{ item.part_name }}</td>
+<td>{{ item.mold_num }}</td>
+<td>{{ item.cust_name }}</td>
+</tr>
+  <!-- <td>{{ item.description }}          </td> -->
+  <!-- <td>{{ item.description }}          </td> -->
+
+{% for x in itemprocess %}
+<tr>
+<td>{{x.process_name}}</td>
+<td>{{x.process_desc}}</td>
+<tr>
+{% endfor %}
+
+{% endblock %}
